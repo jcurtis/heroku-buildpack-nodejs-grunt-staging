@@ -185,9 +185,7 @@ elif [ -f $BUILD_DIR/Gruntfile.js ] || [ -f $BUILD_DIR/Gruntfile.coffee ]; then
   echo "-----> Found gruntfile, installing grunt-cli"
   run_npm "install --production grunt-cli"
   echo "-----> grunt-cli installed, running grunt heroku task"
-  echo ">>>>>> NODE_ENV:"
-  echo "node env ${NODE_ENV}"
-  $BUILD_DIR/node_modules/grunt-cli/bin/grunt heroku
+  $BUILD_DIR/node_modules/grunt-cli/bin/grunt staging
 else
   echo "-----> No gruntfile (grunt.js) found"
 fi
